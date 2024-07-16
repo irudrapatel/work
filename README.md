@@ -1,52 +1,72 @@
-# Chatbot Deployment with Flask and JavaScript
+![Binaryhood](Logo/BinaryhoodLogo.png)
 
-In this tutorial we deploy the chatbot I created in [this](https://github.com/python-engineer/pytorch-chatbot) tutorial with Flask and JavaScript.
+# ChatBot
 
-This gives 2 deployment options:
-- Deploy within Flask app with jinja2 template
-- Serve only the Flask prediction API. The used html and javascript files can be included in any Frontend application (with only a slight modification) and can run completely separate from the Flask App then.
+## Installation & Setup
 
-## Initial Setup:
-This repo currently contains the starter files.
+[Install Python] https://www.dataquest.io/blog/installing-python-on-mac/
 
-Clone repo and create a virtual environment
-```
-$ git clone https://github.com/python-engineer/chatbot-deployment.git
-$ cd chatbot-deployment
-$ python3 -m venv venv
-$ . venv/bin/activate
-```
-Install dependencies
-```
-$ (venv) pip install Flask torch torchvision nltk
-```
-Install nltk package
-```
-$ (venv) python
->>> import nltk
->>> nltk.download('punkt')
-```
-Modify `intents.json` with different intents and responses for your Chatbot
+[Install pip] https://phoenixnap.com/kb/install-pip-mac
 
-Run
+If you have Python & pip installed then check their version in the terminal or command line tools
+
 ```
-$ (venv) python train.py
-```
-This will dump data.pth file. And then run
-the following command to test it in the console.
-```
-$ (venv) python chat.py
+python3 --version
 ```
 
-Now for deployment follow my tutorial to implement `app.py` and `app.js`.
+```
+pip --version
+```
 
-## Watch the Tutorial
-[![Alt text](https://img.youtube.com/vi/a37BL0stIuM/hqdefault.jpg)](https://youtu.be/a37BL0stIuM)  
-[https://youtu.be/a37BL0stIuM](https://youtu.be/a37BL0stIuM)
+## Installing Flask
 
-## Note
-In the video we implement the first approach using jinja2 templates within our Flask app. Only slight modifications are needed to run the frontend separately. I put the final frontend code for a standalone frontend application in the [standalone-frontend](/standalone-frontend) folder.
+In your terminal run the requirements.txt file using this pip
 
-## Credits:
-This repo was used for the frontend code:
-https://github.com/hitchcliff/front-end-chatjs
+```
+pip install -r requirements.txt
+```
+
+
+## Running ChatBot Application in Terminal
+
+```
+cd into your directory
+```
+
+```
+python app.py
+```
+
+
+
+## What you will create
+
+In this tutorial, I will guide you through the process of building a chatbot that can carry out conversations with users using natural language processing.
+
+To start, we will be using Microsoft DialoGPT, a pre-trained language model that can generate human-like responses to given prompts. We will be integrating DialoGPT with Flask, a popular Python web framework, to create a web application that can communicate with users via a chat interface.
+
+For the frontend of our application, we will be using HTML, CSS, and JavaScript to create a visually appealing and interactive chat interface. Additionally, we will be using jQuery to handle the HTTP requests that are made to the backend server.
+
+Throughout the tutorial, I will provide step-by-step instructions on how to set up your development environment, install the necessary dependencies, and create the required files and code for the application. I will also explain how to train and fine-tune the DialoGPT model to improve the accuracy of its responses.
+
+By the end of this tutorial, you will have a fully functional chatbot that can engage in conversations with users, and you will have gained valuable experience in using Microsoft DialoGPT, Flask, and web development technologies such as HTML, CSS, and JavaScript.
+
+# ChatBot Link
+The Chatbot is constructed using the Microsoft/DialoGPT-medium model.
+
+```
+https://huggingface.co/microsoft/DialoGPT-medium
+```
+
+# User-Html
+
+```
+var userHtml = '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' + user_input + '<span class="msg_time_send">'+ time + 
+    '</span></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
+```
+
+# Bot-HTML
+
+```
+var botHtml = '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' + bot_response + '<span class="msg_time">' + time + '</span></div></div>';
+```
